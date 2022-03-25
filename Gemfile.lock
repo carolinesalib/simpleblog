@@ -6,8 +6,10 @@ GEM
     parser (3.1.0.0)
       ast (~> 2.4.1)
     rainbow (3.1.1)
+    redcarpet (3.5.1)
     regexp_parser (2.2.1)
     rexml (3.2.5)
+    rouge (3.28.0)
     rubocop (1.18.4)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -32,6 +34,8 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  redcarpet
+  rouge
   rubocop
   standard
 
