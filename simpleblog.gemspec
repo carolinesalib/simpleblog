@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
-  s.name = "SimpleBlog"
-  s.version = "0.0.0"
+  s.name = "simpleblog"
+  s.version = "0.0.1"
   s.summary = "Simpler than a regular Rails blog and more dynamically customizable than a Jekyll blog"
   s.description = "Create a simple blog that can be edit with markdown"
   s.authors = ["Caroline Salib"]
