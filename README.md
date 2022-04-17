@@ -6,5 +6,11 @@
 
 ```shell
 gem build simpleblog.gemspec
-gem install ./simpleblog-0.0.1.gem
+gem install ./simpleblog-x.x.x.gem
+```
+
+## Instructions to push the gem to rubygems
+
+```shell
+gem push simpleblog-x.x.x.gem
 ```
