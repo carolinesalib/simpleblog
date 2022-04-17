@@ -1,7 +1,6 @@
 require "redcarpet"
 require "rouge"
-
-require_dependency "rouge/plugins/redcarpet"
+require "rouge/plugins/redcarpet"
 
 class ArticleHTMLRender < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet

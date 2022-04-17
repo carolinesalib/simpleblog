@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    simpleblog (0.0.3)
+      redcarpet
+      rouge
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,6 +44,7 @@ DEPENDENCIES
   redcarpet
   rouge
   rubocop
+  simpleblog!
   standard
 
 BUNDLED WITH
