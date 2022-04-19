@@ -3,7 +3,7 @@ require "rouge"
 require "rouge/plugins/redcarpet"
 require "simpleblog/railtie" if defined?(Rails) && defined?(Rails::Railtie)
 
-class ArticleHTMLRender < Redcarpet::Render::HTML
+class PostHTMLRender < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
   include ActionView::Helpers::AssetTagHelper
 
@@ -17,27 +17,27 @@ class ArticleHTMLRender < Redcarpet::Render::HTML
 end
 
 class SimpleBlog
-  def self.render_article(id)
-    article_content = File.open("app/articles/#{id.to_i}.md").read
-    markdown = Redcarpet::Markdown.new(ArticleHTMLRender, fenced_code_blocks: true)
+  def self.render_post(id)
+    post_content = File.open("app/posts/#{id.to_i}.md").read
+    markdown = Redcarpet::Markdown.new(PostHTMLRender, fenced_code_blocks: true)
 
-    markdown.render(article_content)
+    markdown.render(post_content)
   end
 
-  def self.list_articles(tag = "", in_progress = "true")
-    articles_yml_result = YAML.load_file("app/articles/articles.yml")["articles"]
-    articles = Article.build_list_of_articles(articles_yml_result)
+  def self.list_posts(tag = "", in_progress = "true")
+    posts_yml_result = YAML.load_file("app/posts/posts.yml")["posts"]
+    posts = Post.build_list_of_posts(posts_yml_result)
 
     if tag.present?
-      articles = articles.filter { |article| article.tags.include?(tag) }
+      posts = posts.filter { |post| post.tags.include?(tag) }
     end
 
-    articles = if in_progress == "true"
-      articles.filter { |article| article.in_progress }
+    posts = if in_progress == "true"
+      posts.filter { |post| post.in_progress }
     else
-      articles.filter { |article| !article.in_progress }
+      posts.filter { |post| !post.in_progress }
     end
 
-    articles.sort_by(&:id).reverse!
+    posts.sort_by(&:id).reverse!
   end
 end
