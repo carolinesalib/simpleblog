@@ -1,6 +1,7 @@
 require "redcarpet"
 require "rouge"
 require "rouge/plugins/redcarpet"
+require "simpleblog/railtie" if defined?(Rails) && defined?(Rails::Railtie)
 
 class ArticleHTMLRender < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
