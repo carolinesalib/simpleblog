@@ -1,7 +1,14 @@
 require "redcarpet"
 require "rouge"
 require "rouge/plugins/redcarpet"
+require "simpleblog/post"
 require "simpleblog/railtie" if defined?(Rails) && defined?(Rails::Railtie)
+
+module SimpleBlogHelper
+  def set_site_prefix
+    @title_prefix = "#{params["controller"].capitalize} | "
+  end
+end
 
 class PostHTMLRender < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
