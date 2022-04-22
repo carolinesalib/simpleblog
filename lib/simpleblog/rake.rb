@@ -11,8 +11,14 @@ task :"simpleblog:install" do
   copy_template_file("app/posts/1.md")
   copy_template_file("app/posts/2.md")
 
-  # TODO: add controller
-  # TODO: if controller already exist ask to overrite
+  copy_template_file("app/controllers/blog_controller.rb")
+  copy_template_file("app/controllers/home_controller.rb")
+
+  # TODO: add views
+  # TODO: if views already exist ask to overrite
+
+  # TODO: add routes
+  # TODO: if routes already exist ask to overrite
 
   # TODO: add css
   # TODO: if css already exist ask to overrite
