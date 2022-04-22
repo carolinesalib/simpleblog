@@ -1,0 +1,12 @@
+posts:
+  1:
+    title: My first post using SimpleBlog
+    date: 2022-04-21
+    description: Description of my post
+    tags: sample, programming, tips, template
+  2:
+    title: Not published post
+    date: 2022-04-21
+    description: Description of my post
+    tags: sample, programming, tips, template
+    in_progress: true
