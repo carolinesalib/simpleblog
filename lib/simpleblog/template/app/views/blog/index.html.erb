@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+  <a style="text-decoration: none" href=<%= blog_post_path("#{post.id}-#{post.title.parameterize}") %>>
+    <h1><%= post.title %></h1>
+    <p><%= post.description %></p>
+    <p><%= stringfy_date(post.date) %></p>
+  </a>
+  <% post.tags.each do |tag| %>
+    <a class="tag" href=<%= "#{blog_path}?tag=#{tag}" %>><%= tag %></a>
+  <% end %>
+<% end %>

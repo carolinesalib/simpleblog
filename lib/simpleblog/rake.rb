@@ -14,8 +14,12 @@ task :"simpleblog:install" do
   copy_template_file("app/controllers/blog_controller.rb")
   copy_template_file("app/controllers/home_controller.rb")
 
-  # TODO: add views
-  # TODO: if views already exist ask to overrite
+  Dir.mkdir("app/views/blog") unless Dir.exist?("app/views/blog")
+  Dir.mkdir("app/views/home") unless Dir.exist?("app/views/home")
+
+  copy_template_file("app/views/blog/index.html.erb")
+  copy_template_file("app/views/blog/show.html.erb")
+  copy_template_file("app/views/home/index.html.erb")
 
   # TODO: add routes
   # TODO: if routes already exist ask to overrite
