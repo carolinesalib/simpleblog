@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @title_prefix %>TODO</title>
+    <% @author = "Your name" %>
+    <title><%= "#{@title_prefix} #{@author}"%></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,7 +14,7 @@
   <body>
     <header class="header">
       <div class="header-inner">
-        <a href="/" class="title">TODO</a>
+        <a href="/" class="title"><%= @author %></a>
         <nav class="nav">
           <a class="link" href="<%= about_path %>">About</a>
           <a class="link" href="<%= blog_path %>">Blog</a>
