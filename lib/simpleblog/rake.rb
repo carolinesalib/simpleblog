@@ -37,9 +37,9 @@ def copy_template_file(path)
 
     return if input == "n"
 
-    p "Overriden #{path}"
+    p "Overriden: #{path}"
   else
-    p "Created #{path}"
+    p "Created: #{path}"
   end
 
   copy_file("#{gem_path}/simpleblog/template/#{path}", path)
