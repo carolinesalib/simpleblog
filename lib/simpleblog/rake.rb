@@ -1,10 +1,5 @@
 desc "Install simpleblog basic structure"
 task :"simpleblog:install" do
-  # gem_path = File.dirname(__dir__)
-  # local_path = Dir.pwd
-  # p gem_path
-  # p local_path
-
   Dir.mkdir("app/posts") unless Dir.exist?("app/posts")
 
   copy_template_file("app/posts/posts.yml")
@@ -20,12 +15,17 @@ task :"simpleblog:install" do
   copy_template_file("app/views/blog/index.html.erb")
   copy_template_file("app/views/blog/show.html.erb")
   copy_template_file("app/views/home/index.html.erb")
+  copy_template_file("app/views/layouts/application.html.erb")
 
-  # TODO: add routes
-  # TODO: if routes already exist ask to overrite
+  Dir.mkdir("app/assets/stylesheets/layouts") unless Dir.exist?("app/assets/stylesheets/layouts")
 
-  # TODO: add css
-  # TODO: if css already exist ask to overrite
+  copy_template_file("app/assets/stylesheets/blog.scss")
+  copy_template_file("app/assets/stylesheets/rouge.scss.erb")
+  copy_template_file("app/assets/stylesheets/layouts/application.scss")
+
+  copy_template_file("app/helpers/blog_helper.rb")
+
+  copy_template_file("config/routes.rb")
 end
 
 def copy_template_file(path)

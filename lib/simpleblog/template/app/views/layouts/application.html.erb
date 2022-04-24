@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title_prefix %>TODO</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="/" class="title">TODO</a>
+        <nav class="nav">
+          <a class="link" href="<%= about_path %>">About</a>
+          <a class="link" href="<%= blog_path %>">Blog</a>
+        </nav>
+      </div>
+    </header>
+    <div class="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>
