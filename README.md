@@ -4,13 +4,17 @@ The idea of SimpleBlog is creating a very simple home page and blog using a rail
 
 The intention of this gem is just to share the work I've done for my blog and allow other people to use the same if they want.
 
+## Demo
+
+https://user-images.githubusercontent.com/5773360/172028694-3cab3700-2724-4d8f-b2ee-9ce3cdf3d9ad.mp4
+
 ## Install
 
 ### Pre requisites
 
 * Ruby 3.0.3
 
-Start a fresh rails project.
+Start a fresh rails project
 
 ```shell
 rails new my_blog -O -M
@@ -30,7 +34,7 @@ Install template files
 rails simpleblog:install
 ```
 
-Search for `@author` variable on your `application.html.erb` and add your name to it.
+Search for `@author` variable on your `application.html.erb` and add your name to it
 
 Start the application
 
