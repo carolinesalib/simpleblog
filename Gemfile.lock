@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simpleblog (0.0.3)
+    simpleblog (1.0.0)
       redcarpet
       rouge
 
